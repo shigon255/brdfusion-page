@@ -13,6 +13,17 @@ body {
     margin-bottom: 5px;
 }
 
+.publication-icon {
+  height: 1.1em;
+  width: 1.1em;
+}
+
+.publication-icon-img {
+  display: block;
+  height: 1em;
+  width: 1em;
+}
+
 .dnerf {
   font-variant: small-caps;
 }
