@@ -330,6 +330,10 @@ body {
   overflow: hidden;
 }
 
+.application-video-frame-wide {
+  aspect-ratio: 8 / 3;
+}
+
 .application-video-frame video {
   display: block;
   width: 100%;
