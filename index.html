@@ -2,172 +2,93 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="description" content="Project page">
+  <meta name="keywords" content="Project">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+  <title>BRDFusion: Physics Meets Generation for Urban Scene Inverse Rendering</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" type="image/png" href="./static/images/logo.png">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
 </head>
 <body>
-
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">
+            <span class="publication-title-main">
+              <img class="publication-title-logo" src="./static/images/logo.png" alt="BRDFusion logo">
+              <span>BRDFusion</span>
+            </span>
+            <span class="publication-title-subtitle">Physics Meets Generation for Urban Scene Inverse Rendering</span>
+          </h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
+            <span class="author-block"><a href="https://shigon255.github.io/">Yi-Ruei Liu</a><sup>1,2</sup></span>
+            <span class="author-block"><a href="https://jayinnn.dev/">Jie-Ying Lee</a><sup>1</sup></span>
+            <span class="author-block">Zheng-Hui Huang<sup>1</sup></span>
+            <span class="author-block"><a href="https://yulunalexliu.github.io/">Yu-Lun Liu</a><sup>1</sup></span>
+            <span class="author-block"><a href="https://chih-hao-lin.github.io/">Chih-Hao Lin</a><sup>2</sup></span>
           </div>
-
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>National Yang Ming Chiao Tung University</span>
+            <span class="author-block"><sup>2</sup>University of Illinois Urbana-Champaign</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
+                    <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fab fa-youtube"></i>
+                    <i class="fas fa-video"></i>
                   </span>
                   <span>Video</span>
                 </a>
               </span>
-              <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fab fa-github"></i>
+                    <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
-                  </a>
+                </a>
               </span>
-              <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="far fa-images"></i>
+                    <i class="fab fa-google-drive"></i>
                   </span>
                   <span>Data</span>
-                  </a>
+                </a>
+              </span>
             </div>
-
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <strong>TL;DR:</strong> BRDFusion combines physically based inverse rendering and generative priors for high-quality urban scene inverse rendering and relighting, enabling diverse driving-scene simulations.
+            </span>
           </div>
         </div>
       </div>
@@ -175,316 +96,580 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<section class="section teaser-section">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+    <div class="teaser-carousel" aria-label="BRDFusion teaser scenes">
+      <div class="teaser-video-wrap">
+        <video
+          id="brdfusion-teaser-video"
+          src="./static/videos/brdfusion_teaser_3_polished.mp4"
+          controls
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata">
+        </video>
+        <button class="teaser-nav teaser-nav-prev" type="button" aria-label="Previous teaser scene">
+          <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+          </span>
+        </button>
+        <button class="teaser-nav teaser-nav-next" type="button" aria-label="Next teaser scene">
+          <span class="icon">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </button>
+      </div>
+      <div class="teaser-dots" aria-hidden="true">
+        <span class="teaser-dot is-active"></span>
+        <span class="teaser-dot"></span>
+        <span class="teaser-dot"></span>
       </div>
     </div>
   </div>
 </section>
 
-
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Reconstructing urban scenes from casual videos is important for autonomous driving and AR/VR.
+            This involves solving highly ill-posed inverse rendering problems to decouple geometry, materials, and lighting.
+            Existing methods struggle with a trade-off: physically-based rendering (PBR) respects physical lighting but is prone to optimization artifacts, while generative models synthesize photorealistic images but lack explicit 3D constraints, failing to control lighting precisely.
+            In this paper, we present BRDFusion, a hybrid framework that combines the explicit control of physical models and the photorealism of generative models.
+            To achieve this, our rendering pipeline first renders physically accurate, though noisy, shading via Monte Carlo ray tracing.
+            We then inject this noisy output into a video diffusion model through a generative rendering pass.
+            This framework alleviates artifacts while preserving 3D consistency and physically-based lighting.
+            Experiments show that BRDFusion achieves state-of-the-art results for photorealistic relighting, night simulation, and virtual object insertion.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
   </div>
 </section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Method</h2>
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
+          <figure class="method-figure">
+            <img src="./static/images/rendering.png" alt="BRDFusion rendering pipeline diagram">
+            <figcaption>
+              <strong>Rendering.</strong>
+              We represent the scene with a 3DGS scene graph and HDR lighting. We first volume-render the G-buffer and perform PBR. Generative rendering is then applied to reduce rendering artifacts and improve rendering quality.
+            </figcaption>
+          </figure>
+          <figure class="method-figure">
+            <img src="./static/images/optimization.png" alt="BRDFusion optimization pipeline diagram">
+            <figcaption>
+              <strong>Optimization.</strong>
+              We adopt a staged approach to scene optimization. First, we optimize the scene using the volume-rendered color loss and regularize the rendered G-buffer with the DiffusionRenderer prior. Next, we fix the geometry and material and optimize the lighting using the PBR-rendered color loss. The lighting is also regularized by the DiffusionLight prior. We further refine the DiffusionRenderer prior to enhance its temporal consistency and subsequently improve reconstruction quality.
+            </figcaption>
+          </figure>
         </div>
       </div>
-      <!--/ Visual Effects. -->
+    </div>
+  </div>
+</section>
 
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
+<section class="section results-section">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <div id="brdfusion-results" class="results-viewer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section application-section">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Application</h2>
+        <div class="application-item">
+          <p class="application-subtitle has-text-centered">Urban Scene Relighting</p>
+          <div class="application-video-frame">
+            <video
+              src="./static/videos/waymo_relighting_grid.mp4"
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata">
             </video>
           </div>
-
+        </div>
+        <div class="application-item">
+          <p class="application-subtitle has-text-centered">Driving Scene Simulation</p>
+          <div class="application-video-frame">
+            <video
+              src="./static/videos/brdfusion_teaser_19_polished.mp4"
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata">
+            </video>
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Acknowledgements</h2>
+        <div class="content">
+          <p>
+            Acknowledgement placeholder.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">BibTeX</h2>
+        <pre><code>@article{brdfusion,
+  title   = {BRDFusion: Physics Meets Generation for Urban Scene Inverse Rendering},
+  author  = {},
+  journal = {},
+  year    = {}
 }</code></pre>
+      </div>
+    </div>
   </div>
 </section>
-
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
-        <div class="content">
+        <div class="content has-text-centered">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            This website template is borrowed from <a href="https://nerfies.github.io/">Nerfies</a>.
           </p>
         </div>
       </div>
     </div>
   </div>
 </footer>
+
+<script>
+  const teaserScenes = [
+    { label: "Scene 3", src: "./static/videos/brdfusion_teaser_3_polished.mp4" },
+    { label: "Scene 16", src: "./static/videos/brdfusion_teaser_16_polished.mp4" },
+    { label: "Scene 172", src: "./static/videos/brdfusion_teaser_172_polished.mp4" },
+  ];
+
+  const teaserVideo = document.getElementById("brdfusion-teaser-video");
+  const teaserPrev = document.querySelector(".teaser-nav-prev");
+  const teaserNext = document.querySelector(".teaser-nav-next");
+  const teaserDots = [...document.querySelectorAll(".teaser-dot")];
+  let selectedTeaserIndex = 0;
+
+  function renderTeaserScene(index) {
+    selectedTeaserIndex = (index + teaserScenes.length) % teaserScenes.length;
+    const scene = teaserScenes[selectedTeaserIndex];
+    teaserVideo.src = scene.src;
+    teaserDots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("is-active", dotIndex === selectedTeaserIndex);
+    });
+    teaserVideo.load();
+    const playPromise = teaserVideo.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {});
+    }
+  }
+
+  teaserPrev.addEventListener("click", () => {
+    renderTeaserScene(selectedTeaserIndex - 1);
+  });
+
+  teaserNext.addEventListener("click", () => {
+    renderTeaserScene(selectedTeaserIndex + 1);
+  });
+
+  const resultScenes = [
+    { id: "172", dataset: "Waymo", label: "waymo_scene_1", displayLabel: "Waymo Scene 1" },
+    { id: "114", dataset: "Waymo", label: "waymo_scene_2", displayLabel: "Waymo Scene 2" },
+    { id: "703", dataset: "Waymo", label: "waymo_scene_3", displayLabel: "Waymo Scene 3" },
+    { id: "syn_1", dataset: "Synthetic", label: "synthetic_scene_1", displayLabel: "Synthetic Scene 1" },
+    { id: "syn_3", dataset: "Synthetic", label: "synthetic_scene_2", displayLabel: "Synthetic Scene 2" },
+    { id: "syn_5", dataset: "Synthetic", label: "synthetic_scene_3", displayLabel: "Synthetic Scene 3" },
+  ];
+
+  const resultMethods = [
+    { id: "UrbanIR", label: "UrbanIR" },
+    { id: "InvRGBL", label: "InvRGB+L" },
+    { id: "Gen3C_DR", label: "Gen3C+DR" },
+    { id: "Ours", label: "Ours" },
+    { id: "GT", label: "GT" },
+  ];
+
+  const resultEnvmapMapping = {
+    waymo_scene_1: "sunset_rot30.png",
+    waymo_scene_2: "sunset.png",
+    waymo_scene_3: "day_rot90.png",
+    synthetic_scene_1: "qwan_rot90.png",
+    synthetic_scene_2: "qwan_rot90.png",
+    synthetic_scene_3: "syn_sunset.png",
+  };
+
+  const resultSections = [
+    {
+      title: "View Synthesis and Relighting",
+      root: "view_syn_rel",
+      selectedScene: "172",
+      selectedVideo: "night_relighting.mp4",
+      videos: [
+        { id: "ori_lighting.mp4", label: "View Synthesis" },
+        { id: "day_relighting.mp4", label: "Daytime Relighting" },
+        { id: "night_relighting.mp4", label: "Nighttime Relighting" },
+      ],
+      isAvailable(scene, method, file) {
+        const isWaymo = !scene.startsWith("syn");
+        return !(method === "GT" && isWaymo && file !== "ori_lighting.mp4");
+      },
+    },
+    {
+      title: "Inverse Rendering",
+      root: "inv_render",
+      selectedScene: "172",
+      selectedVideo: "albedo.mp4",
+      videos: [
+        { id: "ori_lighting.mp4", label: "View Synthesis" },
+        { id: "depth.mp4", label: "Depth" },
+        { id: "normal.mp4", label: "Normal" },
+        { id: "albedo.mp4", label: "Albedo" },
+        { id: "roughness.mp4", label: "Roughness" },
+        { id: "metallic.mp4", label: "Metallic" },
+      ],
+      isAvailable(scene, method, file) {
+        const isWaymo = !scene.startsWith("syn");
+        if (method === "UrbanIR" && (file === "roughness.mp4" || file === "metallic.mp4")) {
+          return false;
+        }
+        if (method === "InvRGBL" && file === "metallic.mp4") {
+          return false;
+        }
+        return !(method === "GT" && isWaymo && file !== "ori_lighting.mp4");
+      },
+    },
+  ];
+
+  const resultMount = document.getElementById("brdfusion-results");
+  const resultMediaRoot = "./static/results";
+  const resultSyncIntervalMs = 350;
+  const resultFilteredRelightingScenes = new Set(["172", "114", "703", "syn_1", "syn_3", "syn_5", "003", "019"]);
+
+  function syncResultVideoToClock(video, group, nowMs) {
+    if (!Number.isFinite(video.duration) || video.duration <= 0) {
+      return;
+    }
+
+    const elapsedSeconds = (nowMs - group.startMs) / 1000;
+    const targetTime = ((elapsedSeconds % video.duration) + video.duration) % video.duration;
+
+    if (Math.abs(video.currentTime - targetTime) > 0.18) {
+      video.currentTime = targetTime;
+    }
+
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {});
+    }
+  }
+
+  function bindResultSynchronizedPlayback(section, videos) {
+    const group = {
+      startMs: performance.now(),
+      videos,
+    };
+    section.syncGroup = group;
+
+    videos.forEach((video) => {
+      video.defaultMuted = true;
+      video.muted = true;
+      video.autoplay = true;
+      video.loop = false;
+      video.playsInline = true;
+
+      const syncNow = () => {
+        if (section.syncGroup !== group) {
+          return;
+        }
+        syncResultVideoToClock(video, group, performance.now());
+      };
+
+      video.addEventListener("loadedmetadata", syncNow);
+      video.addEventListener("canplay", syncNow);
+      video.addEventListener("pause", () => {
+        if (document.hidden || section.syncGroup !== group) {
+          return;
+        }
+        syncNow();
+      });
+
+      syncNow();
+    });
+  }
+
+  function syncAllResultSections() {
+    const nowMs = performance.now();
+    resultSections.forEach((section) => {
+      if (!section.syncGroup) {
+        return;
+      }
+      section.syncGroup.videos.forEach((video) => {
+        syncResultVideoToClock(video, section.syncGroup, nowMs);
+      });
+    });
+  }
+
+  function createResultButton(label, onClick) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "button is-small is-rounded results-toggle";
+    button.textContent = label;
+    button.addEventListener("click", onClick);
+    return button;
+  }
+
+  function createResultEmptyCard(method) {
+    const card = document.createElement("div");
+    card.className = "result-card result-card-empty";
+    card.dataset.method = method.id;
+
+    const name = document.createElement("div");
+    name.className = "result-card-name";
+    name.textContent = method.label;
+
+    const body = document.createElement("div");
+    body.className = "result-empty-state";
+    body.textContent = "N/A";
+
+    card.append(name, body);
+    return card;
+  }
+
+  function createResultEnvmapCard(label, src) {
+    const card = document.createElement("div");
+    card.className = "result-card result-envmap-card";
+
+    const name = document.createElement("div");
+    name.className = "result-card-name";
+    name.textContent = label;
+
+    const frame = document.createElement("div");
+    frame.className = "result-media-frame";
+
+    const image = document.createElement("img");
+    image.src = src;
+    image.alt = label;
+
+    frame.append(image);
+    card.append(name, frame);
+    return card;
+  }
+
+  function getResultVideoSourceId(sceneId, methodId, videoId) {
+    if (methodId !== "Gen3C_DR" || !resultFilteredRelightingScenes.has(sceneId)) {
+      return videoId;
+    }
+    if (videoId === "day_relighting.mp4") {
+      return "day_relighting_filtered.mp4";
+    }
+    if (videoId === "night_relighting.mp4") {
+      return "night_relighting_filtered.mp4";
+    }
+    return videoId;
+  }
+
+  function createResultVideoCard(section, sceneId, method, videoId) {
+    const card = document.createElement("div");
+    card.className = "result-card";
+    card.dataset.method = method.id;
+
+    const name = document.createElement("div");
+    name.className = "result-card-name";
+    name.textContent = method.label;
+
+    const frame = document.createElement("div");
+    frame.className = "result-media-frame";
+
+    const video = document.createElement("video");
+    const sourceId = getResultVideoSourceId(sceneId, method.id, videoId);
+    video.src = `${resultMediaRoot}/${section.root}/${sceneId}/${method.id}/${sourceId}`;
+    video.controls = true;
+    video.preload = "metadata";
+    video.muted = true;
+    video.playsInline = true;
+    video.autoplay = true;
+    video.loop = false;
+
+    frame.append(video);
+    card.append(name, frame);
+    return card;
+  }
+
+  function appendResultEnvmap(section, scene, grid) {
+    if (section.title !== "View Synthesis and Relighting") {
+      return;
+    }
+
+    let envmapSrc = null;
+    let envmapLabel = "Relighting Envmap";
+
+    if (section.selectedVideo === "ori_lighting.mp4" && scene.dataset === "Synthetic") {
+      envmapSrc = `${resultMediaRoot}/envmaps/qwan.png`;
+      envmapLabel = "Envmap";
+    } else if (section.selectedVideo === "night_relighting.mp4") {
+      envmapSrc = `${resultMediaRoot}/envmaps/night_tonemapped_car.png`;
+      envmapLabel = scene.dataset === "Synthetic"
+        ? "Relighting Envmap (tone-mapped) + Head Lights + Street Lights"
+        : "Relighting Envmap (tone-mapped) + Head Lights";
+    } else if (section.selectedVideo === "day_relighting.mp4" && resultEnvmapMapping[scene.label]) {
+      envmapSrc = `${resultMediaRoot}/envmaps/${resultEnvmapMapping[scene.label]}`;
+    }
+
+    if (envmapSrc) {
+      grid.appendChild(createResultEnvmapCard(envmapLabel, envmapSrc));
+    }
+  }
+
+  function createResultSceneCard(section, scene) {
+    const card = document.createElement("article");
+    card.className = "result-scene-card";
+
+    const meta = document.createElement("div");
+    meta.className = "result-scene-meta";
+
+    const titleWrap = document.createElement("div");
+    titleWrap.className = "result-scene-title";
+
+    const title = document.createElement("h3");
+    title.className = "title is-5";
+    title.textContent = scene.displayLabel;
+
+    const badge = document.createElement("span");
+    badge.className = "tag is-light";
+    badge.textContent = scene.dataset;
+
+    titleWrap.append(title, badge);
+
+    const selected = section.videos.find((item) => item.id === section.selectedVideo);
+    const pill = document.createElement("span");
+    pill.className = "tag is-dark";
+    pill.textContent = selected.label;
+
+    meta.append(titleWrap, pill);
+
+    const grid = document.createElement("div");
+    grid.className = "result-grid";
+    appendResultEnvmap(section, scene, grid);
+
+    resultMethods.forEach((method) => {
+      const available = section.isAvailable(scene.id, method.id, section.selectedVideo);
+      grid.appendChild(
+        available
+          ? createResultVideoCard(section, scene.id, method, section.selectedVideo)
+          : createResultEmptyCard(method)
+      );
+    });
+
+    card.append(meta, grid);
+    return card;
+  }
+
+  function renderResultSection(section) {
+    const sectionEl = document.createElement("div");
+    sectionEl.className = "result-block";
+
+    const heading = document.createElement("h3");
+    heading.className = "title is-4 has-text-centered";
+    heading.textContent = section.title;
+
+    const controls = document.createElement("div");
+    controls.className = "result-controls";
+
+    const sceneControls = document.createElement("div");
+    sceneControls.className = "result-control-row";
+
+    const videoControls = document.createElement("div");
+    videoControls.className = "result-control-row";
+
+    const mount = document.createElement("div");
+
+    function rerender() {
+      const activeScene = resultScenes.find((scene) => scene.id === section.selectedScene);
+      mount.replaceChildren(createResultSceneCard(section, activeScene));
+      bindResultSynchronizedPlayback(section, [...mount.querySelectorAll("video")]);
+
+      [...sceneControls.children].forEach((button) => {
+        button.classList.toggle("is-dark", button.dataset.sceneId === section.selectedScene);
+        button.classList.toggle("is-light", button.dataset.sceneId !== section.selectedScene);
+      });
+
+      [...videoControls.children].forEach((button) => {
+        button.classList.toggle("is-dark", button.dataset.videoId === section.selectedVideo);
+        button.classList.toggle("is-light", button.dataset.videoId !== section.selectedVideo);
+      });
+    }
+
+    resultScenes.forEach((scene) => {
+      const button = createResultButton(scene.displayLabel, () => {
+        section.selectedScene = scene.id;
+        rerender();
+      });
+      button.dataset.sceneId = scene.id;
+      sceneControls.appendChild(button);
+    });
+
+    section.videos.forEach((videoItem) => {
+      const button = createResultButton(videoItem.label, () => {
+        section.selectedVideo = videoItem.id;
+        rerender();
+      });
+      button.dataset.videoId = videoItem.id;
+      videoControls.appendChild(button);
+    });
+
+    controls.append(sceneControls, videoControls);
+    sectionEl.append(heading, controls, mount);
+    rerender();
+
+    return sectionEl;
+  }
+
+  resultSections.forEach((section) => {
+    resultMount.appendChild(renderResultSection(section));
+  });
+
+  setInterval(syncAllResultSections, resultSyncIntervalMs);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      syncAllResultSections();
+    }
+  });
+</script>
 
 </body>
 </html>
