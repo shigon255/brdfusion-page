@@ -65,7 +65,8 @@ body {
   object-fit: contain;
 }
 
-.teaser-nav {
+.teaser-nav,
+.application-video-nav {
   display: inline-grid;
   place-items: center;
   position: absolute;
@@ -83,34 +84,41 @@ body {
   z-index: 2;
 }
 
-.teaser-nav-prev {
+.teaser-nav-prev,
+.application-video-nav-prev {
   left: 0.85rem;
 }
 
-.teaser-nav-next {
+.teaser-nav-next,
+.application-video-nav-next {
   right: 0.85rem;
 }
 
 .teaser-nav:hover,
-.teaser-nav:focus {
+.teaser-nav:focus,
+.application-video-nav:hover,
+.application-video-nav:focus {
   border-color: #fff;
   color: #fff;
   background: rgba(0, 0, 0, 0.78);
   transform: translateY(-50%) scale(1.04);
 }
 
-.teaser-nav .icon {
+.teaser-nav .icon,
+.application-video-nav .icon {
   font-size: 0.95rem;
 }
 
-.teaser-dots {
+.teaser-dots,
+.application-video-dots {
   display: flex;
   justify-content: center;
   gap: 0.45rem;
   margin-top: 0.8rem;
 }
 
-.teaser-dot {
+.teaser-dot,
+.application-video-dot {
   display: block;
   width: 0.45rem;
   height: 0.45rem;
@@ -118,7 +126,8 @@ body {
   background: #c7c7c7;
 }
 
-.teaser-dot.is-active {
+.teaser-dot.is-active,
+.application-video-dot.is-active {
   background: #111;
 }
 
@@ -322,6 +331,7 @@ body {
 }
 
 .application-video-frame {
+  position: relative;
   aspect-ratio: 3 / 2;
   width: 100%;
   background: #f2f2f2;

@@ -233,6 +233,7 @@
           <p class="application-subtitle has-text-centered">Driving Scene Simulation</p>
           <div class="application-video-frame application-video-frame-wide">
             <video
+              id="application-driving-video"
               src="./static/videos/brdfusion_teaser_19_polished.mp4"
               controls
               autoplay
@@ -241,6 +242,20 @@
               playsinline
               preload="metadata">
             </video>
+            <button class="application-video-nav application-video-nav-prev" type="button" aria-label="Previous driving scene simulation">
+              <span class="icon">
+                <i class="fas fa-chevron-left"></i>
+              </span>
+            </button>
+            <button class="application-video-nav application-video-nav-next" type="button" aria-label="Next driving scene simulation">
+              <span class="icon">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </button>
+          </div>
+          <div class="application-video-dots" aria-hidden="true">
+            <span class="application-video-dot is-active"></span>
+            <span class="application-video-dot"></span>
           </div>
         </div>
       </div>
@@ -326,6 +341,39 @@
 
   teaserNext.addEventListener("click", () => {
     renderTeaserScene(selectedTeaserIndex + 1);
+  });
+
+  const applicationDrivingScenes = [
+    { label: "Scene 19", src: "./static/videos/brdfusion_teaser_19_polished.mp4" },
+    { label: "Scene 703", src: "./static/videos/brdfusion_teaser_703_polished.mp4" },
+  ];
+
+  const applicationDrivingVideo = document.getElementById("application-driving-video");
+  const applicationDrivingPrev = document.querySelector(".application-video-nav-prev");
+  const applicationDrivingNext = document.querySelector(".application-video-nav-next");
+  const applicationDrivingDots = [...document.querySelectorAll(".application-video-dot")];
+  let selectedApplicationDrivingIndex = 0;
+
+  function renderApplicationDrivingScene(index) {
+    selectedApplicationDrivingIndex = (index + applicationDrivingScenes.length) % applicationDrivingScenes.length;
+    const scene = applicationDrivingScenes[selectedApplicationDrivingIndex];
+    applicationDrivingVideo.src = scene.src;
+    applicationDrivingDots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("is-active", dotIndex === selectedApplicationDrivingIndex);
+    });
+    applicationDrivingVideo.load();
+    const playPromise = applicationDrivingVideo.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {});
+    }
+  }
+
+  applicationDrivingPrev.addEventListener("click", () => {
+    renderApplicationDrivingScene(selectedApplicationDrivingIndex - 1);
+  });
+
+  applicationDrivingNext.addEventListener("click", () => {
+    renderApplicationDrivingScene(selectedApplicationDrivingIndex + 1);
   });
 
   const resultScenes = [
