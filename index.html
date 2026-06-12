@@ -681,7 +681,6 @@
 
     const grid = document.createElement("div");
     grid.className = "result-grid";
-    appendResultEnvmap(section, scene, grid);
 
     resultMethods.forEach((method) => {
       const available = section.isAvailable(scene.id, method.id, section.selectedVideo);
@@ -691,6 +690,7 @@
           : createResultEmptyCard(method)
       );
     });
+    appendResultEnvmap(section, scene, grid);
 
     card.append(meta, grid);
     return card;
