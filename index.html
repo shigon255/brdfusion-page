@@ -121,16 +121,9 @@
   <div class="container is-max-desktop">
     <div class="teaser-carousel" aria-label="BRDFusion teaser scenes">
       <div class="teaser-video-wrap">
-        <video
-          id="brdfusion-teaser-video"
-          src="./static/videos/brdfusion_teaser_3_polished.mp4"
-          controls
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata">
-        </video>
+        <div class="teaser-viewport">
+          <div class="teaser-track" id="brdfusion-teaser-track"></div>
+        </div>
         <button class="teaser-nav teaser-nav-prev" type="button" aria-label="Previous teaser scene">
           <span class="icon">
             <i class="fas fa-chevron-left"></i>
@@ -144,6 +137,8 @@
       </div>
       <div class="teaser-dots" aria-hidden="true">
         <span class="teaser-dot is-active"></span>
+        <span class="teaser-dot"></span>
+        <span class="teaser-dot"></span>
         <span class="teaser-dot"></span>
         <span class="teaser-dot"></span>
       </div>
@@ -216,7 +211,6 @@
       <div class="column is-full">
         <h2 class="title is-3 has-text-centered">Application</h2>
         <div class="application-item">
-          <p class="application-subtitle has-text-centered">Urban Scene Relighting</p>
           <div class="application-video-frame">
             <video
               src="./static/videos/waymo_relighting_grid.mp4"
@@ -227,35 +221,6 @@
               playsinline
               preload="metadata">
             </video>
-          </div>
-        </div>
-        <div class="application-item">
-          <p class="application-subtitle has-text-centered">Driving Scene Simulation</p>
-          <div class="application-video-frame application-video-frame-wide">
-            <video
-              id="application-driving-video"
-              src="./static/videos/brdfusion_teaser_19_polished.mp4"
-              controls
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata">
-            </video>
-            <button class="application-video-nav application-video-nav-prev" type="button" aria-label="Previous driving scene simulation">
-              <span class="icon">
-                <i class="fas fa-chevron-left"></i>
-              </span>
-            </button>
-            <button class="application-video-nav application-video-nav-next" type="button" aria-label="Next driving scene simulation">
-              <span class="icon">
-                <i class="fas fa-chevron-right"></i>
-              </span>
-            </button>
-          </div>
-          <div class="application-video-dots" aria-hidden="true">
-            <span class="application-video-dot is-active"></span>
-            <span class="application-video-dot"></span>
           </div>
         </div>
       </div>
@@ -310,71 +275,134 @@
 
 <script>
   const teaserScenes = [
+    { label: "Scene 703", src: "./static/videos/brdfusion_teaser_703_polished.mp4" },
     { label: "Scene 3", src: "./static/videos/brdfusion_teaser_3_polished.mp4" },
     { label: "Scene 16", src: "./static/videos/brdfusion_teaser_16_polished.mp4" },
     { label: "Scene 172", src: "./static/videos/brdfusion_teaser_172_polished.mp4" },
+    { label: "Scene 19", src: "./static/videos/brdfusion_teaser_19_polished.mp4" },
   ];
 
-  const teaserVideo = document.getElementById("brdfusion-teaser-video");
+  const teaserTrack = document.getElementById("brdfusion-teaser-track");
   const teaserPrev = document.querySelector(".teaser-nav-prev");
   const teaserNext = document.querySelector(".teaser-nav-next");
   const teaserDots = [...document.querySelectorAll(".teaser-dot")];
+  const teaserSlides = [teaserScenes[teaserScenes.length - 1], ...teaserScenes, teaserScenes[0]];
   let selectedTeaserIndex = 0;
+  let teaserTrackIndex = 1;
+  let isTeaserAnimating = false;
 
-  function renderTeaserScene(index) {
-    selectedTeaserIndex = (index + teaserScenes.length) % teaserScenes.length;
-    const scene = teaserScenes[selectedTeaserIndex];
-    teaserVideo.src = scene.src;
+  function createTeaserSlide(scene, index) {
+    const slide = document.createElement("div");
+    slide.className = "teaser-slide";
+    slide.dataset.teaserSlideIndex = index;
+
+    const video = document.createElement("video");
+    video.src = scene.src;
+    video.controls = true;
+    video.defaultMuted = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+    video.width = 1920;
+    video.height = 640;
+    video.setAttribute("aria-label", scene.label);
+    video.addEventListener("ended", () => {
+      if (index === teaserTrackIndex) {
+        goToTeaserSlide(teaserTrackIndex + 1);
+      }
+    });
+
+    slide.append(video);
+    return slide;
+  }
+
+  function getRealTeaserIndex(trackIndex) {
+    if (trackIndex === 0) {
+      return teaserScenes.length - 1;
+    }
+    if (trackIndex === teaserScenes.length + 1) {
+      return 0;
+    }
+    return trackIndex - 1;
+  }
+
+  function updateTeaserDots() {
     teaserDots.forEach((dot, dotIndex) => {
       dot.classList.toggle("is-active", dotIndex === selectedTeaserIndex);
     });
-    teaserVideo.load();
-    const playPromise = teaserVideo.play();
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(() => {});
+  }
+
+  function setTeaserTrackPosition(animate = true) {
+    teaserTrack.classList.toggle("is-resetting", !animate);
+    teaserTrack.style.transform = `translateX(-${teaserTrackIndex * 100}%)`;
+  }
+
+  function syncTeaserPlayback() {
+    [...teaserTrack.querySelectorAll("video")].forEach((video, index) => {
+      if (index === teaserTrackIndex) {
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {});
+        }
+      } else {
+        video.pause();
+        if (Number.isFinite(video.duration) && video.duration > 0) {
+          video.currentTime = 0;
+        }
+      }
+    });
+  }
+
+  function goToTeaserSlide(trackIndex) {
+    if (isTeaserAnimating) {
+      return;
     }
+
+    isTeaserAnimating = true;
+    teaserTrackIndex = trackIndex;
+    selectedTeaserIndex = getRealTeaserIndex(teaserTrackIndex);
+    updateTeaserDots();
+    setTeaserTrackPosition(true);
   }
 
   teaserPrev.addEventListener("click", () => {
-    renderTeaserScene(selectedTeaserIndex - 1);
+    goToTeaserSlide(teaserTrackIndex - 1);
   });
 
   teaserNext.addEventListener("click", () => {
-    renderTeaserScene(selectedTeaserIndex + 1);
+    goToTeaserSlide(teaserTrackIndex + 1);
   });
 
-  const applicationDrivingScenes = [
-    { label: "Scene 19", src: "./static/videos/brdfusion_teaser_19_polished.mp4" },
-    { label: "Scene 703", src: "./static/videos/brdfusion_teaser_703_polished.mp4" },
-  ];
-
-  const applicationDrivingVideo = document.getElementById("application-driving-video");
-  const applicationDrivingPrev = document.querySelector(".application-video-nav-prev");
-  const applicationDrivingNext = document.querySelector(".application-video-nav-next");
-  const applicationDrivingDots = [...document.querySelectorAll(".application-video-dot")];
-  let selectedApplicationDrivingIndex = 0;
-
-  function renderApplicationDrivingScene(index) {
-    selectedApplicationDrivingIndex = (index + applicationDrivingScenes.length) % applicationDrivingScenes.length;
-    const scene = applicationDrivingScenes[selectedApplicationDrivingIndex];
-    applicationDrivingVideo.src = scene.src;
-    applicationDrivingDots.forEach((dot, dotIndex) => {
-      dot.classList.toggle("is-active", dotIndex === selectedApplicationDrivingIndex);
-    });
-    applicationDrivingVideo.load();
-    const playPromise = applicationDrivingVideo.play();
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(() => {});
+  teaserTrack.addEventListener("transitionend", (event) => {
+    if (event.target !== teaserTrack || event.propertyName !== "transform") {
+      return;
     }
-  }
 
-  applicationDrivingPrev.addEventListener("click", () => {
-    renderApplicationDrivingScene(selectedApplicationDrivingIndex - 1);
+    if (teaserTrackIndex === 0) {
+      teaserTrackIndex = teaserScenes.length;
+      setTeaserTrackPosition(false);
+    } else if (teaserTrackIndex === teaserScenes.length + 1) {
+      teaserTrackIndex = 1;
+      setTeaserTrackPosition(false);
+    }
+
+    selectedTeaserIndex = getRealTeaserIndex(teaserTrackIndex);
+    updateTeaserDots();
+    syncTeaserPlayback();
+    window.setTimeout(() => {
+      teaserTrack.classList.remove("is-resetting");
+      isTeaserAnimating = false;
+    }, 0);
   });
 
-  applicationDrivingNext.addEventListener("click", () => {
-    renderApplicationDrivingScene(selectedApplicationDrivingIndex + 1);
+  teaserSlides.forEach((scene, index) => {
+    teaserTrack.append(createTeaserSlide(scene, index));
   });
+  setTeaserTrackPosition(false);
+  syncTeaserPlayback();
+  window.setTimeout(() => {
+    teaserTrack.classList.remove("is-resetting");
+  }, 0);
 
   const resultScenes = [
     { id: "172", dataset: "Waymo", label: "waymo_scene_1", displayLabel: "Waymo Scene 1" },
